@@ -1,6 +1,8 @@
 # Progamação Orientada a Objetos
 ![java](https://arquivo.devmedia.com.br/artigos/henrique_gasparotto/4_pilares_oo/image001.png)
 
+![alt text](assets/image.png)
+
 ## MVC - Model View Control:
 - Pasta Modelo (classes);
 - Pasta Visão (visão do usuário);
@@ -25,13 +27,14 @@ public class HelloWorld {
 !comentar cod!
 ```Java
 package AULA_1;
+/*importando a pasta de utilitarios de java, nesse casa é importado somente o objeto Scanner de until*/
 import java.until.Scanner;
 
 public class HelloWorld {
     public static void main (String[] args) {
         int valor = 10;
         System.out.println("Valor: " + valor);
-
+        /*iniciando a variavel leia como tipo obejto Scanner e inicializando ela com o */
         Scanner leia = new Scanner(System.in);
         System.out.println("Digite um valor:");
         int valor1 = leia.nextInt();//nextDouble-nextFloat-next(pega em carac)
@@ -44,9 +47,17 @@ public class HelloWorld {
 }
 ```
 ## Variaveis
-- int 
-- float
-- double
+
+|   Type  |      Set of values      |            Values            | Operators |
+|:-------:|:-----------------------:|:----------------------------:|:---------:|
+|  short  |         integers        | between -2^15 and + (2^15)-1 | + - * / % |
+|   int   |         integers        | between -2^31 and + (2^31)-1 | + - * / % |
+|  long   |         integers        | between -2^63 and + (2^63)-1 | + - * / % |
+|  float  |         integers        |     real numbers 32 bit      |  + - * /  |
+|  double |  floating-point numbers |     real numbers 64 bit      |  + - * /  |
+| boolean |      boolean values     |         true or false        | && \|\| ! |
+|   char  |        characters       |         16 bit               |           |
+|  String | sequences of characters |it's not a primitive data type|           |
 
 ```java
 ```
