@@ -15,13 +15,13 @@ public class Exercicio1 {
            
         DecimalFormat df = new DecimalFormat("0.00");
 
-        System.out.print("Digite a matrícula do primeiro empregado: ");
-        int matricula1 = scanner.nextInt();
+        // System.out.print("Digite a matrícula do primeiro empregado: ");
+        // int matricula1 = scanner.nextInt();
         System.out.print("Digite o salário do primeiro empregado: ");
         double salario1 = scanner.nextDouble();
 
-        System.out.print("Digite a matrícula do segundo empregado: ");
-        int matricula2 = scanner.nextInt();
+        // System.out.print("Digite a matrícula do segundo empregado: ");
+        // int matricula2 = scanner.nextInt();
         System.out.print("Digite o salário do segundo empregado: ");
         double salario2 = scanner.nextDouble();
 
