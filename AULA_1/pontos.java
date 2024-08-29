@@ -24,6 +24,8 @@ public class pontos {
             System.out.println("Pontos Ganhos: " + pontosGanhos);
             System.out.println("Pontos Perdidos: " + pontosPerdidos);
             System.out.println("Aproveitamento: " + aproveitamento + "%");
+
+            leia.close();
         }
     }
 }
