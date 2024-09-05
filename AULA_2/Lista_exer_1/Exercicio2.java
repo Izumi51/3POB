@@ -5,7 +5,7 @@
 
     Fórmula: C = 5/9 * (F - 32)
 */
-package AULA_2.codLouzada.exercicio2;
+package AULA_2.Lista_exer_1;
 
 import java.util.Scanner;
 import java.text.DecimalFormat;

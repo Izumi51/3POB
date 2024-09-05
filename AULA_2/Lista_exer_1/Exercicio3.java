@@ -8,7 +8,7 @@
     feminino; a porcentagem de alunos reprovados; o total de alunos da turma.
 */
 
-package AULA_2.codLouzada.exercicio3;
+package AULA_2.Lista_exer_1;
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
