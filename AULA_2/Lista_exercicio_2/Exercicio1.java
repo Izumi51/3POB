@@ -3,7 +3,7 @@
     Se sua idade for menor que 18 anos, escrever a mensagem: "É menor".
 */
 
-package AULA_2.Lista_exer_2;
+package AULA_2.Lista_exercicio_2;
 import java.util.Scanner;
 
 public class Exercicio1 {

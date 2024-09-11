@@ -4,9 +4,9 @@
     caso contrário escrever "Aprovado". 
 */
 
-package AULA_2.Lista_exer_2;
-import java.util.Scanner;
+package AULA_2.Lista_exercicio_2;
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
 public class Exercicio3 {
     public static void main(String[] args) {
@@ -24,12 +24,12 @@ public class Exercicio3 {
 
         float media = (nota1 + nota2) / 2;
 
-        System.out.print(nome + media); 
+        System.out.println(nome + "\t" + df.format(media)); 
 
         if (media < 7){
-            System.out.print("Reprovado"); 
+            System.out.println("Reprovado"); 
         }else{
-            System.out.print("Aprovado");
+            System.out.println("Aprovado");
         }
 
         scanner.close();

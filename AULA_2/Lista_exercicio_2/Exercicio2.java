@@ -3,7 +3,7 @@
     Calcular sua idade aproximada e informá-la. Se sua idade for inferior a 16 anos, 
     escrever a mensagem "Não pode votar"; caso contrário, emitir a mensagem "É eleitor".
 */
-package AULA_2.Lista_exer_2;
+package AULA_2.Lista_exercicio_2;
 import java.util.Scanner;
 
 public class Exercicio2 {
@@ -23,5 +23,7 @@ public class Exercicio2 {
         }else{
             System.out.print("E eleitor");
         }
+
+        scanner.close();
     }
 }
