@@ -53,7 +53,7 @@ public class Exercicio9 {
                 {
                     tipo = "equilatero";
                 }else{
-                    if ((v[0] == v[1]) || (v[1] == v[2]))
+                    if ((v[0] == v[1]) || (v[1] == v[2]) || (v[0] == v[2]))
                     {
                         tipo = "isosceles";
                     }else{
