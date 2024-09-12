@@ -5,13 +5,11 @@
 */
 package AULA_2.Lista_exercicio_2;
 import java.util.Scanner;
-import java.text.DecimalFormat;
 
 public class Exercicio6 {
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in))
         {
-            DecimalFormat df = new DecimalFormat("0.00");
 
             System.out.print("Insira seu nome: ");
             String nome = scanner.nextLine();

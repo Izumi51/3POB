@@ -4,7 +4,7 @@
     Calcular e informar: a quantidade de pontos ganhos e a quantidade de pontos perdidos.
  */
 
-package AULA_2.Lista_exer_1;
+package AULA_2.Lista_exercicio_1;
 
 import java.util.Scanner;
 

@@ -4,7 +4,7 @@
     9% no salário do segundo. Informar: o valor do desconto do primeiro; o valor do
     acréscimo do segundo; o salário final do primeiro; o salário final do segundo.
 */
-package AULA_2.Lista_exer_1;
+package AULA_2.Lista_exercicio_1;
 import java.util.Scanner;
 import java.text.DecimalFormat;
 

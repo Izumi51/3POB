@@ -6,7 +6,7 @@
     total do faturamento com cada produto e o faturamento total.
 */
 
-package AULA_2.Lista_exer_1;
+package AULA_2.Lista_exercicio_1;
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
