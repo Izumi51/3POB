@@ -8,22 +8,20 @@ import java.util.Scanner;
 
 public class Exercicio2 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Insira o ano atual: ");
-        int anoAtual = scanner.nextInt();
-
-        System.out.print("Insira o seu ano de nascimento: ");
-        int anoNasc = scanner.nextInt();
-
-        int idade = anoAtual - anoNasc;
-
-        if (idade < 16){
-            System.out.print("Nao pode votar");
-        }else{
-            System.out.print("E eleitor");
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Insira o ano atual: ");
+            int anoAtual = scanner.nextInt();
+            
+            System.out.print("Insira o seu ano de nascimento: ");
+            int anoNasc = scanner.nextInt();
+            
+            int idade = anoAtual - anoNasc;
+            
+            if (idade < 16){
+                System.out.print("Nao pode votar");
+            }else{
+                System.out.print("E eleitor");
+            }
         }
-
-        scanner.close();
     }
 }

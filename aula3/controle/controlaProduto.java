@@ -1,5 +1,5 @@
-package AULA_3.controle;
-import AULA_3.dominio.Produto;
+package aula3.controle;
+import aula3.dominio.Produto;
 import java.util.Scanner;
 
 public class controlaProduto {

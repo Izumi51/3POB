@@ -1,4 +1,4 @@
-package AULA_3.dominio;
+package aula3.dominio;
 
 public class Produto {
     private int numero;

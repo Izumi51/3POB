@@ -15,32 +15,30 @@ import java.text.DecimalFormat;
 public class Exercicio3 {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-
-        DecimalFormat df = new DecimalFormat("0.00");
-
-        System.out.print("Insira o codigo da turma: ");
-        int codigo = scanner.nextInt();
-
-        System.out.print("Insira a quantidade de alunos do sexo Masculino: ");
-        int quantM = scanner.nextInt();
-
-        System.out.print("Insira a quantidade de alunos do sexo feminino: ");
-        int quantF = scanner.nextInt();
-
-        System.out.print("Insira a quantidade de alunos aprovados na turma " + codigo + ": ");
-        int quantA = scanner.nextInt();
-
-        int totalAlunos = quantF + quantM;
-        double porcentM = (quantM * 100) / totalAlunos;
-        double porcentF = (quantF * 100) / totalAlunos;
-        double porcentA = (quantA * 100) / totalAlunos;
-
-        System.out.println("Porcentagem de alunos Masculinos: " + df.format(porcentM));
-        System.out.println("Porcentagem de alunos Femininos: " + df.format(porcentF));
-        System.out.println("Porcentagem de alunos Aprovados: " + df.format(porcentA));
-        System.out.println("Total de alunos: " + totalAlunos);
-
-        scanner.close();
+        try (Scanner scanner = new Scanner(System.in)) {
+            DecimalFormat df = new DecimalFormat("0.00");
+            
+            System.out.print("Insira o codigo da turma: ");
+            int codigo = scanner.nextInt();
+            
+            System.out.print("Insira a quantidade de alunos do sexo Masculino: ");
+            int quantM = scanner.nextInt();
+            
+            System.out.print("Insira a quantidade de alunos do sexo feminino: ");
+            int quantF = scanner.nextInt();
+            
+            System.out.print("Insira a quantidade de alunos aprovados na turma " + codigo + ": ");
+            int quantA = scanner.nextInt();
+            
+            int totalAlunos = quantF + quantM;
+            double porcentM = (quantM * 100) / totalAlunos;
+            double porcentF = (quantF * 100) / totalAlunos;
+            double porcentA = (quantA * 100) / totalAlunos;
+            
+            System.out.println("Porcentagem de alunos Masculinos: " + df.format(porcentM));
+            System.out.println("Porcentagem de alunos Femininos: " + df.format(porcentF));
+            System.out.println("Porcentagem de alunos Aprovados: " + df.format(porcentA));
+            System.out.println("Total de alunos: " + totalAlunos);
+        }
     }
 }

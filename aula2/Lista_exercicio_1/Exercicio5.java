@@ -10,29 +10,27 @@ import java.util.Scanner;
 
 public class Exercicio5 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Digite nome do time: ");
-        String nomeTime = scanner.nextLine();
-
-        System.out.print("Digite o numero de vitoria: ");
-        int vitoria = scanner.nextInt();
-
-        System.out.print("Digite o numero de derrotas: ");
-        int derrota = scanner.nextInt();
-
-        System.out.print("Digite o numero de empates: ");
-        int empate = scanner.nextInt();
-
-        int jogos = vitoria + derrota + empate;
-        int pontosGanhos = (vitoria * 3) + (empate * 1);
-        int pontosPerdidos = (derrota * 3) + (empate * 2);
-
-        System.out.println("Nome: " + nomeTime);
-        System.out.println("Jogos: " + jogos);
-        System.out.println("Pontos Ganhos: " + pontosGanhos);
-        System.out.println("Pontos Perdidos: " + pontosPerdidos);
-
-        scanner.close();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Digite nome do time: ");
+            String nomeTime = scanner.nextLine();
+            
+            System.out.print("Digite o numero de vitoria: ");
+            int vitoria = scanner.nextInt();
+            
+            System.out.print("Digite o numero de derrotas: ");
+            int derrota = scanner.nextInt();
+            
+            System.out.print("Digite o numero de empates: ");
+            int empate = scanner.nextInt();
+            
+            int jogos = vitoria + derrota + empate;
+            int pontosGanhos = (vitoria * 3) + (empate * 1);
+            int pontosPerdidos = (derrota * 3) + (empate * 2);
+            
+            System.out.println("Nome: " + nomeTime);
+            System.out.println("Jogos: " + jogos);
+            System.out.println("Pontos Ganhos: " + pontosGanhos);
+            System.out.println("Pontos Perdidos: " + pontosPerdidos);
+        }
     }
 }

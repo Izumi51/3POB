@@ -10,29 +10,28 @@ import java.util.Scanner;
 
 public class Exercicio3 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        DecimalFormat df = new DecimalFormat("0.00");
-
-        System.out.print("Insira seu Nome: ");
-        String nome = scanner.nextLine();
-
-        System.out.print("Insira a nota 1: ");
-        float nota1 = scanner.nextFloat();
-
-        System.out.print("Insira a nota 2: ");
-        float nota2 = scanner.nextFloat();
-
-        float media = (nota1 + nota2) / 2;
-
-        System.out.println(nome + "\t" + df.format(media)); 
-
-        if (media < 7){
-            System.out.println("Reprovado"); 
-        }else{
-            System.out.println("Aprovado");
+        try (Scanner scanner = new Scanner(System.in)) {
+            DecimalFormat df = new DecimalFormat("0.00");
+            
+            System.out.print("Insira seu Nome: ");
+            String nome = scanner.nextLine();
+            
+            System.out.print("Insira a nota 1: ");
+            float nota1 = scanner.nextFloat();
+            
+            System.out.print("Insira a nota 2: ");
+            float nota2 = scanner.nextFloat();
+            
+            float media = (nota1 + nota2) / 2;
+            
+            System.out.println(nome + "\t" + df.format(media));
+            
+            if (media < 7){
+                System.out.println("Reprovado");
+            }else{
+                System.out.println("Aprovado");
+            }
         }
-
-        scanner.close();
     }    
 }
 

@@ -45,7 +45,7 @@ public class Exercicio9 {
                 }
             }
 
-            String tipo = "";
+            String tipo;
 
             if (eTriangulo == true)
             {

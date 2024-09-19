@@ -18,7 +18,7 @@ public class Exercicio6 {
             System.out.print("Insira seu salario: ");
             double salario = scanner.nextDouble();
 
-            double desconto = 0;
+            double desconto;
 
             if (salario < salarioMin){ 
                 desconto = (salario * 2) / 100;
