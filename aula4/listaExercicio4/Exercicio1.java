@@ -22,6 +22,8 @@ public class Exercicio1 {
                 System.out.print("Insira seu nome: ");
                 String nome = scanner.nextLine();
                 nomes.add(nome);
+                // forma reduzida nomes.add(scanner.nextLine());
+            
                 System.out.print("Insira sua altura: ");
                 Double altura = scanner.nextDouble();
                 alturas.add(altura);
