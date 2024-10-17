@@ -1,3 +1,4 @@
+package geral;
 public class bitwise {
     public static void main(String[] args) {
         // Initial values
