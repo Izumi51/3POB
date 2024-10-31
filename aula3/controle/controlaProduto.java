@@ -19,4 +19,9 @@ public class controlaProduto {
             System.out.println("Total: " + produto.valorPagar());
         }
     }
+
+    public void adicionarProduto(int id, String nome, double valor) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'adicionarProduto'");
+    }
 }
