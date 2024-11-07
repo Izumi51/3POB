@@ -1,3 +1,7 @@
+/*
+    Programa para adicionar e listar produtos   
+*/
+
 package aula6.alpha.controle;
 
 import aula6.alpha.dominio.Produto;
