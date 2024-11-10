@@ -120,7 +120,9 @@ public class ControlaPaciente {
 
                 case 2:
                     System.out.println("Insira o numero do Paciente a ser alterado: ");
-                        numero = in.nextInt();
+                    numero = in.nextInt();
+
+                    control.alterarPaciente(numero);
                     break;
 
                 case 3:
