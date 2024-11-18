@@ -1,41 +1,14 @@
 package aula6.charlie.controle;
 
 import aula6.charlie.dominio.Produto;
-import aula6.echo.dominio.Paciente;
 import java.io.*;
-import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ControlaProduto {
     private ArrayList<Produto> produtos;
     private final String arquivoProdutos = "produtos.txt";
 
-    public ControlaProduto() {
-        this.produtos = new ArrayList<>();
-    }
-
-    public void adicionarProduto(int id, String nome, double valor) {
-        Produto prod = new Produto(id, nome, valor);
-        produtos.add(prod);
-        salvarProdutos();
-    }
-
-    public void alterarProduto() {
-
-    }
-
-    public void excluirProduto() {
-
-    }
-
-    public void lstUm() {
-
-    }
-    public void lstTodos() {
-
-    }
-
-    /*
     public ControlaProduto() {
         this.produtos = new ArrayList<>();
         carregarProdutos();
@@ -67,11 +40,13 @@ public class ControlaProduto {
             String novoNome = scanner.nextLine();
             System.out.print("Novo valor do produto: ");
             double novoValor = scanner.nextDouble();
-
+            
             produto.setNome(novoNome);
             produto.setValor(novoValor);
             salvarProdutos();
             System.out.println("Produto alterado com sucesso!");
+
+            scanner.close();
         } else {
             System.out.println("Produto com ID " + id + " não encontrado.");
         }
@@ -126,77 +101,58 @@ public class ControlaProduto {
             System.out.println("Erro ao carregar produtos: " + e.getMessage());
         }
     }
-}
-
-    */
 
     public static void main(String[] args) {
-        ControlaProduto control = new ControlaProduto();
-        Scanner in = new Scanner(System.in);
+        ControlaProduto controle = new ControlaProduto();
+        Scanner scanner = new Scanner(System.in);
+        int opcao;
 
         do {
-            int op;
-            int id;
-            String nome;
-            double valor;
+            System.out.println("\nMenu:");
+            System.out.println("1. Adicionar Produto");
+            System.out.println("2. Listar Produtos");
+            System.out.println("3. Alterar Produto");
+            System.out.println("4. Excluir Produto");
+            System.out.println("0. Sair");
+            System.out.print("Escolha uma opção: ");
+            opcao = scanner.nextInt();
 
-            System.out.println("\n---------MENU-----------");
-            System.out.println("1: Adicionar produto");
-            System.out.println("2: Alterar produto");
-            System.out.println("3: Excluir produto");
-            System.out.println("4: Listar um produto");
-            System.out.println("5: Listar todos produto");
-            System.out.println("0: Sair");
-            System.out.println("Selecione uma opcao: ");
-            op = in.nextInt();
-            System.out.println("------------------------");
-
-            switch(op) {
-                case 0:
-                    break;
+            switch (opcao) {
                 case 1:
-                    System.out.println("Insira o ID do produto: ");
-                    id = in.nextInt();
-                    in.nextLine();
-                    System.out.println("Insira o Nome do produto: ");
-                    nome = in.nextLine();
-                    System.out.println("Insira o Valor do produto: ");
-                    valor = in.nextDouble();
-
-                    control.adicionarProduto(id, nome, valor);
+                    System.out.print("ID do Produto: ");
+                    scanner.nextLine();
+                    int id = scanner.nextInt();
+                    scanner.nextLine(); // Limpa o buffer do scanner
+                    System.out.print("Nome do Produto: ");
+                    String nome = scanner.nextLine();
+                    System.out.print("Valor do Produto: ");
+                    double valor = scanner.nextDouble();
+                    controle.adicionarProduto(id, nome, valor);
                     break;
-
                 case 2:
-                    System.out.println("Insira o ID do produto a ser alterado: ");
-                    id = in.nextInt();
+                    controle.listarProdutos();
                     break;
-
                 case 3:
-                    System.out.println("Insira o ID do produto a ser excluido: ");
-                    id = in.nextInt();
-
-                    control.excluirProduto(id);
+                    scanner.nextLine();
+                    System.out.print("ID do Produto a alterar: ");
+                    int idAlterar = scanner.nextInt();
+                    scanner.nextLine(); // Limpa o buffer
+                    controle.alterarProduto(idAlterar);
                     break;
-
                 case 4:
-                    System.out.println("Insira o ID do produto a ser listado: ");
-                    id = in.nextInt();
-
-                    control.listarUmProduto(id);
+                    scanner.nextLine();
+                    System.out.print("ID do Produto a excluir: ");
+                    int idExcluir = scanner.nextInt();
+                    controle.excluirProduto(idExcluir);
                     break;
-
-                case 5:
-                    control.listarTodosProduto();
+                case 0:
+                    System.out.println("Encerrando o programa.");
                     break;
-
                 default:
-                    System.out.println("Opcao invalida!!");
-                    break;
+                    System.out.println("Opção inválida. Tente novamente.");
             }
+        } while (opcao != 0);
 
-        } while(op != 0);
-
-        in.close();
+        scanner.close();
     }
-
 }

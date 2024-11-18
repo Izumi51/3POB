@@ -5,30 +5,26 @@ public class Produto {
     private String nome;
     private double valor;
 
-    public Produto (int id, String nome, double valor) {
+    public Produto(int id, String nome, double valor) {
         this.id = id;
         this.nome = nome;
         this.valor = valor;
     }
 
-    /* GET */
-    public double getValor() {
-        return valor;
+       // Getters
+    public int getId() {
+        return id;
     }
 
     public String getNome() {
         return nome;
     }
 
-    public int getId() {
-        return id;
+    public double getValor() {
+        return valor;
     }
 
-    /* SET */
-    public void setValor(double valor) {
-        this.valor = valor;
-    }
-
+    // Setters
     public void setId(int id) {
         this.id = id;
     }
@@ -37,9 +33,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    /* METODOS */
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
     public void listarProduto() {
         System.out.println("ID: " + id + ", Nome: " + nome + ", Valor: R$ " + valor);
     }
-
 }
