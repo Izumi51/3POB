@@ -5,12 +5,13 @@ package exercicioArquivo.controle;
 
 import exercicioArquivo.dominio.Paciente;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ControlaPaciente {
     private ArrayList<Paciente> pacientes;
-    private final String arquivoPacientes = "paciente.txt";
+    private final String arquivoPacientes = "exercicioArquivo/paciente.txt";
 
     public ControlaPaciente() {
         this.pacientes = new ArrayList<>();
@@ -28,6 +29,7 @@ public class ControlaPaciente {
 
         if (pacie != null) {
             pacientes.remove(pacie);
+            salvarPacientes();
         } else {
             System.out.println("Paciente nao encontrado!");
         }
@@ -66,6 +68,7 @@ public class ControlaPaciente {
 
             pacie.setPeso(peso);
             pacie.setAltura(altura);
+            salvarPacientes();
 
             in.close();
         } else {
@@ -84,8 +87,36 @@ public class ControlaPaciente {
         return null;
     }
 
+    private void salvarPacientes() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(arquivoPacientes))) {
+            for (Paciente paciente : pacientes) {
+                writer.write(paciente.getNumero() + ";" + paciente.getPeso() + ";" + paciente.getAltura());
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar pacientes: " + e.getMessage());
+        }
+    }
+
+    private void carregarPacientes() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(arquivoPacientes))) {
+            String linha;
+            while ((linha = reader.readLine()) != null) {
+                String[] dados = linha.split(";");
+                int num = Integer.parseInt(dados[0]);
+                double peso = Double.parseDouble(dados[1]);
+                double altura = Double.parseDouble(dados[2]);
+                pacientes.add(new Paciente(num, peso, altura));
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Arquivo de pacientes não encontrado. Será criado ao salvar novos pacientes.");
+        } catch (IOException e) {
+            System.out.println("Erro ao carregar pacientes: " + e.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
-        aula6.echo.controle.ControlaPaciente control = new aula6.echo.controle.ControlaPaciente();
+        ControlaPaciente control = new ControlaPaciente();
         Scanner in = new Scanner(System.in);
         int op;
 
